@@ -42,7 +42,7 @@ html, body {margin:0; padding:0}
 body{height:100%;overflow-y:scroll}
 body, select, textarea, a, input, pre{
 font-family: "Roboto",-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Helvetica","Arial",sans-serif;
-font-size:12.6px;
+
 letter-spacing: 0.2px;
 word-wrap:break-word; text-decoration:none;
 }
@@ -320,11 +320,11 @@ var obj = json[i];
 
 
 
-document.getElementById("demo").innerHTML += '<a class="tag2 op light border2"  href="?'+obj.id+'"><img class="ico op" src="https://api.faviconkit.com/'+obj.url+'/16" width="14px" style="border-radius: 25px;margin-bottom:-3px;"> '+obj.name+'</a>';
+document.getElementById("demo").innerHTML += '<a class="tag2 op light border2"  href="?'+obj.id+'"><img class="ico op" src="https://api.faviconkit.com/'+obj.url+'/16" width="14px" style="border-radius: 25px;"> '+obj.name+'</a>';
 
 
 if(g == '?'+obj.id){
-document.getElementById("play").innerHTML = '<h1><img class="ico op" src="https://api.faviconkit.com/'+obj.url+'/16" width="14px" style="border-radius: 25px;margin-bottom:-3px;">  '+obj.name+'</h1><audio autoplay="autoplay" controls class="m"><source src="'+obj.live+'" type="audio/ogg"><source src="'+obj.live+'" type="audio/mpeg"></audio><br /><a href="http://'+obj.url+'">'+obj.url+'</a>';
+document.getElementById("play").innerHTML = '<h1><img class="ico op" src="https://api.faviconkit.com/'+obj.url+'/16" width="14px" style="border-radius: 25px;">  '+obj.name+'</h1><audio autoplay="autoplay" controls class="m"><source src="'+obj.live+'" type="audio/ogg"><source src="'+obj.live+'" type="audio/mpeg"></audio><br /><a href="http://'+obj.url+'">'+obj.url+'</a>';
 
 }
 
