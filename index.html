@@ -162,14 +162,7 @@ transform: rotate(360deg);
 <body>
 <div class="wrapper" style="text-align:center">
 
-<script>
-var g = location.search;
-if (g === "") { g = '?0';}
 
-
-
-
-</script>
 
 <p id="play"></p>
 
@@ -196,8 +189,8 @@ margin:0 auto; margin-top:3px;
 <script>
 var json = [
 {
-	"id": "0",
-    "name" : "Українське радіо", 
+    "name" : "Українське радіо",
+    "id": "0", 
     "url"   : "www.nrcu.gov.ua",
     "live" : "http://radio.ukr.radio:8000/ur1-mp3-m",
     "img": ""
@@ -205,108 +198,118 @@ var json = [
 
 
 {
+	"name" : "Радіо Промінь", 
 	"id" : "1",
-    "name" : "Радіо Промінь", 
     "url"   : "promin.fm",
     "live" : "https://radio.nrcu.gov.ua:8443/ur2-mp3",
     "img": ""
 },
 
 {
+	"id":"11",
+    "name" : "Третій канал Культура", 
+    "url"   : "www.nrcu.gov.ua/3channel_about",
+    "live" : "http://radio.ukr.radio:8000/ur3-mp3-m",
+    "img": ""
+},
+
+{
+
+    "name" : "Громадське радіо", 
+    "id" : "3",
+    "url"   : "hromadske.radio",
+    "live" : "https://hromadske.radio/radio_https_upstream",
+    "img": ""
+},
+
+
+{
+	"name" : "Радіо FM Галичина", 
 	"id" : "2",
-    "name" : "Радіо FM Галичина", 
     "url"   : "www.galychyna.fm",
     "live" : "https://stream320.galychyna.fm/WebSite",
     "img": ""
 },
 
-{
-	"id" : "3",
-    "name" : "Радіо FM Галичина", 
-    "url"   : "https://www.galychyna.fm/",
-    "live" : "https://stream320.galychyna.fm/WebSite",
-    "img": ""
-},
+
 
 {
 	"id" : "4",
-    "name" : "Західний полюс", 
-    "url"   : "z-polus.info",
-    "live" : "https://stream320.galychyna.fm/WebSite",
+    "name" : "ТРК &quot;Львівська хвиля&quot;", 
+    "url"   : "lviv.fm",
+    "live" : "https://onair.lviv.fm:8443/lviv.fm",
     "img": ""
 },
 
 {
 	"id":"5",
-    "name" : "Радіо FM Галичина", 
-    "url"   : "https://www.galychyna.fm/",
-    "live" : "https://stream320.galychyna.fm/WebSite",
+    "name" : "Radio SKOVORODA ", 
+    "url"   : "http://radioskovoroda.com",
+    "live" : "http://stream.radioskovoroda.com:8000/radioskovoroda",
     "img": ""
 },
 
 {
 	"id":"6",
-    "name" : "Радіо FM Галичина", 
-    "url"   : "https://www.galychyna.fm/",
-    "live" : "https://stream320.galychyna.fm/WebSite",
+    "name" : "Radio ROKS", 
+    "url"   : "www.radioroks.ua",
+    "live" : "http://online.radioroks.ua/RadioROKS",
     "img": ""
 },
 
 {
 	"id":"7",
-    "name" : "Радіо FM Галичина", 
-    "url"   : "https://www.galychyna.fm/",
-    "live" : "https://stream320.galychyna.fm/WebSite",
+    "name" : "Армія fm", 
+    "url"   : "www.armyfm.com.ua",
+    "live" : "https://icecast.armyfm.com.ua:8443/ArmyFM",
     "img": ""
 },
 
 {
 	"id":"8",
-    "name" : "Радіо FM Галичина", 
-    "url"   : "https://www.galychyna.fm/",
-    "live" : "https://stream320.galychyna.fm/WebSite",
+    "name" : "УХ радіо", 
+    "url"   : "uhradio.ua",
+    "live" : "http://193.169.80.7:8001/efir",
     "img": ""
 },
 
 {
 	"id":"9",
-    "name" : "Радіо FM Галичина", 
-    "url"   : "https://www.galychyna.fm/",
-    "live" : "https://stream320.galychyna.fm/WebSite",
+    "name" : "Радіо НВ", 
+    "url"   : "radio.nv.ua",
+    "live" : "http://91.218.212.84:8000/radionv.mp3",
     "img": ""
 },
 
 {
-	"id":"10",
-    "name" : "Радіо FM Галичина", 
-    "url"   : "https://www.galychyna.fm/",
-    "live" : "https://stream320.galychyna.fm/WebSite",
-    "img": ""
-},
-
-{
-	"id":"11",
-    "name" : "Радіо FM Галичина", 
-    "url"   : "https://www.galychyna.fm/",
-    "live" : "https://stream320.galychyna.fm/WebSite",
+    "name" : "«Західний полюс»", 
+    "id":"10",
+    "url"   : "z-polus.info",
+    "live" : "https://online.1043.com.ua/1043fm",
     "img": ""
 }
 
 
 
 
-
-
-
-];
-
-json.sort(function(a, b){
-return a.name - b.name;
+].sort(function(obj1, obj2) {
+	// Ascending: first age less than the previous
+	return obj1.name - obj2.name;
 });
 
 
+var g = location.search;
+
+
+if (g === "") { g = '?0'; 
+/*var keyCount  = Object.keys(json).length;
+var g = Math.floor(Math.random() * keyCount);*/
+}
+
 for(var i = 0; i < json.length; i++) {
+
 var obj = json[i];
+
 
 
 document.getElementById("demo").innerHTML += '<a class="tag2 op light border2"  href="?'+obj.id+'"><img class="ico op" src="https://api.faviconkit.com/'+obj.url+'/16" width="14px" style="border-radius: 25px;margin-bottom:-3px;"> '+obj.name+'</a>';
