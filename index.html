@@ -307,11 +307,12 @@ var json = [
 
 var g = location.search;
 
-
-if (g === "") { g = '?0'; 
-/*var keyCount  = Object.keys(json).length;
-var g = Math.floor(Math.random() * keyCount);*/
+if (g === "") {
+var g = '?'+Math.floor(Math.random() * json.length); 
+/*document.write("Random Number Generated : " + g );  */
+/*g = '?0';*/
 }
+
 
 for(var i = 0; i < json.length; i++) {
 
