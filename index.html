@@ -161,10 +161,7 @@ transform: rotate(360deg);
 </head>
 <body>
 <div class="wrapper" style="text-align:center">
-
-
-
-<p id="play"></p>
+<div id="play"></div>
 
 <style>
 .tag2 {
@@ -295,7 +292,9 @@ var json = [
     "url"   : "krainafm.com.ua",
     "live" : "http://live.radioec.com.ua:8000/kiev",
     "img": ""
-}
+},
+
+
 
 
 
@@ -320,11 +319,17 @@ var obj = json[i];
 
 
 
-document.getElementById("demo").innerHTML += '<a class="tag2 op light border2"  href="?'+obj.id+'"><img class="ico op" src="https://api.faviconkit.com/'+obj.url+'/16" width="14px" style="border-radius: 25px;"> '+obj.name+'</a>';
+
 
 
 if(g == '?'+obj.id){
 document.getElementById("play").innerHTML = '<h1><img class="ico op" src="https://api.faviconkit.com/'+obj.url+'/16" width="14px" style="border-radius: 25px;">  '+obj.name+'</h1><audio autoplay="autoplay" controls class="m"><source src="'+obj.live+'" type="audio/ogg"><source src="'+obj.live+'" type="audio/mpeg"></audio><br /><a href="http://'+obj.url+'">http://'+obj.url+'</a>';
+
+document.getElementById("demo").innerHTML += '<a class="tag2 light2 border2"  href="?'+obj.id+'"><img class="ico op" src="https://api.faviconkit.com/'+obj.url+'/16" width="14px" style="border-radius: 25px;"> '+obj.name+'</a>';
+
+}else{
+
+document.getElementById("demo").innerHTML += '<a class="tag2 op light border2"  href="?'+obj.id+'"><img class="ico op" src="https://api.faviconkit.com/'+obj.url+'/16" width="14px" style="border-radius: 25px;"> '+obj.name+'</a>';
 
 }
 
@@ -340,5 +345,6 @@ console.log(obj.id);
 <a href="https://twitter.com/ikstrawor"><img width="16" class="op ico" alt="ico" src="https://api.faviconkit.com/twitter.com/16" style="margin-bottom:-5px; margin-right:5px"></a>
 </div>
 
+<br /><br />
 </body>
 </html>
