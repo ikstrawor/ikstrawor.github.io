@@ -10,6 +10,7 @@
 <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 <meta http-equiv="pragma" content="no-cache" />
 
+<!--<link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />-->
 
 <meta name="description" content="" />
 <meta name="keywords" content="">
@@ -173,6 +174,11 @@ border-radius:5px;
 }
 	
 
+audio {
+width:100%;
+max-width:400px;
+border-radius: 25px;
+}
 
 .menu a{
 max-width:250px;
@@ -281,7 +287,7 @@ var json = [
 {
 	"id":"11",
     "name" : "«Західний полюс»", 
-    "url"   : "z-polus.info",
+    "url"  : "z-polus.info",
     "live" : "https://online.1043.com.ua/1043fm",
     "img": ""
 },
@@ -333,11 +339,6 @@ var g = '?'+Math.floor(Math.random() * json.length);
 for(var i = 0; i < json.length; i++) {
 
 var obj = json[i];
-
-
-
-
-
 
 if(g == '?'+obj.id){
 document.getElementById("play").innerHTML = '<h1><img class="ico op" src="https://api.faviconkit.com/'+obj.url+'/16" width="14px" style="border-radius: 25px;">  '+obj.name+'</h1><audio autoplay="autoplay" controls class="m"><source src="'+obj.live+'" type="audio/ogg"><source src="'+obj.live+'" type="audio/mpeg"></audio><br /><a href="http://'+obj.url+'">http://'+obj.url+'</a>';
