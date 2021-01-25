@@ -321,18 +321,24 @@ var json = [
 
 
 
-].sort(function(obj1, obj2) {
-	// Ascending: first age less than the previous
-	return obj1.name - obj2.name;
-});
+];
 
 
 var g = location.search;
 
-if (g === "") {
+if (g !== ""){ document.cookie = "cg="+g; }
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+}
+var cg = getCookie("cg");
+if (cg !== ""){ var g = cg; }
+if (cg == ""){ g = "?random"; document.cookie = "cg=?random"; }
+
+
+if (g == "?random"||g == undefined) {
 var g = '?'+Math.floor(Math.random() * json.length); 
-/*document.write("Random Number Generated : " + g );  */
-/*g = '?0';*/
 }
 
 
@@ -359,7 +365,7 @@ console.log(obj.id);
 
 
 
-<br /><a href="./" class="op">random</a><br /><br />
+<br /><a href="./?random" class="op">random</a><br /><br />
 <a href="https://twitter.com/ikstrawor"><img width="16" class="op ico" alt="ico" src="https://api.faviconkit.com/twitter.com/16" style="margin-bottom:-5px; margin-right:5px"></a>
 
 <br /><br /><br /><br />
